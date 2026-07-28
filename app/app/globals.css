@@ -1,0 +1,272 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Gujarati:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+html { scroll-behavior: smooth; }
+
+html,
+html.translated-ltr,
+html.translated-rtl {
+  margin-top: 0 !important;
+}
+
+body {
+  font-family: 'Inter', 'Noto Sans Devanagari', 'Noto Sans Gujarati', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+}
+
+@keyframes splashOrbit {
+  from { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.04); }
+  to { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes splashOrbitReverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes splashProgress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+@keyframes galleryFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes profilePhotoReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes profileDetailReveal {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes awardGalleryReveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.splash-orbit {
+  animation: splashOrbit 2.8s ease-in-out infinite;
+  border-top-color: rgba(184, 149, 42, 0.75);
+}
+
+.splash-orbit-reverse {
+  animation: splashOrbitReverse 3.4s linear infinite;
+  border-bottom-color: rgba(184, 149, 42, 0.45);
+}
+
+.splash-progress {
+  animation: splashProgress 3s ease forwards;
+}
+
+.gallery-float {
+  animation: galleryFloat 6s ease-in-out infinite;
+}
+
+.profile-photo-reveal {
+  animation: profilePhotoReveal 700ms ease-out both;
+}
+
+.profile-detail-reveal {
+  animation: profileDetailReveal 620ms ease-out both;
+}
+
+.award-gallery-reveal {
+  animation: awardGalleryReveal 560ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-photo-reveal,
+  .profile-detail-reveal,
+  .award-gallery-reveal,
+  .gallery-float,
+  .splash-orbit,
+  .splash-orbit-reverse,
+  .splash-progress {
+    animation: none !important;
+  }
+}
+
+.hero-text-shadow {
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.78), 0 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+#google_translate_element,
+body > .skiptranslate,
+.goog-te-banner-frame,
+.goog-te-balloon-frame,
+.goog-te-gadget,
+.goog-logo-link,
+.goog-tooltip,
+.goog-tooltip:hover,
+.VIpgJd-ZVi9od-ORHb,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+iframe.skiptranslate,
+iframe.goog-te-banner-frame,
+iframe.VIpgJd-ZVi9od-ORHb {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  min-height: 0 !important;
+}
+
+body {
+  top: 0 !important;
+  position: static !important;
+}
+
+body,
+button,
+a,
+p,
+span,
+li,
+h1,
+h2,
+h3,
+h4 {
+  overflow-wrap: anywhere;
+}
+
+button,
+a {
+  min-width: 0;
+}
+
+.translated-ltr body,
+.translated-rtl body {
+  top: 0 !important;
+}
+
+html[data-site-theme='dark'] body {
+  background: #081522;
+  color: #f8fafc;
+}
+
+html[data-site-theme='dark'] .bg-white {
+  background-color: #102033 !important;
+}
+
+html[data-site-theme='dark'] [class*='bg-[#F8F4EE]'] {
+  background-color: #0f1d2b !important;
+}
+
+html[data-site-theme='dark'] [class*='bg-[#1A2E42]'] {
+  background-color: #13283d !important;
+}
+
+html[data-site-theme='dark'] [class*='border-[#EDE8DF]'] {
+  border-color: #263f59 !important;
+}
+
+html[data-site-theme='dark'] [class*='text-[#0D1B2A]'],
+html[data-site-theme='dark'] [class*='text-[#2C2C2C]'] {
+  color: #f8fafc !important;
+}
+
+html[data-site-theme='dark'] [class*='text-[#4B5563]'],
+html[data-site-theme='dark'] [class*='text-[#6B7280]'] {
+  color: #cbd5e1 !important;
+}
+
+html[data-site-theme='dark'] input,
+html[data-site-theme='dark'] textarea,
+html[data-site-theme='dark'] select {
+  background-color: #102033;
+  color: #f8fafc;
+  border-color: #263f59;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
